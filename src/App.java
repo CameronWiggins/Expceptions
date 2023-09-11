@@ -11,7 +11,9 @@ public class App {
         {
             try 
             {
-                Integer.parseInt(userInput);
+                int num = Integer.parseInt(userInput);
+                System.out.print("Factors: 1, " + num);
+                factor(num);
             }
 
             catch(NumberFormatException error)
@@ -19,14 +21,22 @@ public class App {
                 System.out.println("Invalid Input " + error.getMessage());
             }
 
-            int num = Integer.parseInt(userInput);
-
+            System.out.println("");
             System.out.println("Enter a Number to find its Factors. (or Enter exit to leave the Program)");
             userInput = scan.nextLine();
         }
-
-        
     }
+
+    public static void factor(int num)
+        {
+            for (int i = 2; i < num; i++)
+            {
+                if ((num % i) == 0)
+                {
+                    System.out.print(", " + i);
+                }
+            }
+        }
 }
 
 
